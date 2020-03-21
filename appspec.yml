@@ -1,0 +1,19 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /opt/timeoff-management
+
+hooks:
+  BeforeInstall:    
+    - location: scripts/install_dependencies.sh
+
+  AfterInstall:
+    - location: scripts/npm.sh
+      timeout: 180
+  ApplicationStart:
+    - location: scripts/start.sh
+      timeout: 180
+  ValidateService:
+    - location: scripts/validate.sh
+      timeout: 180
