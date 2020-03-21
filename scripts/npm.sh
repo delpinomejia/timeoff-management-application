@@ -1,5 +1,5 @@
 #!/bin/bash
 
 # Install NPM
-
-sudo npm install
+cd /opt/timeoff-management
+sudo rm -rf node_modules && sudo npm install
